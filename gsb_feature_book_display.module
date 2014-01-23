@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the GSB Feature Book Display feature.
+ */
+
+include_once 'gsb_feature_book_display.features.inc';
