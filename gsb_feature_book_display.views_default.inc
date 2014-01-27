@@ -161,6 +161,98 @@ function gsb_feature_book_display_views_default_views() {
 
   /* Display: EVA Field */
   $handler = $view->new_display('entity_view', 'EVA Field', 'entity_view_1');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'show-more-less show-more-less-num-3 show-more-less-min-5';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_options']['inline'] = array(
+    'field_authors' => 'field_authors',
+    'field_place_of_publication' => 'field_place_of_publication',
+    'field_publisher' => 'field_publisher',
+    'field_year_of_publication' => 'field_year_of_publication',
+  );
+  $handler->display->display_options['row_options']['hide_empty'] = TRUE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  /* Field: Content: Authors */
+  $handler->display->display_options['fields']['field_authors']['id'] = 'field_authors';
+  $handler->display->display_options['fields']['field_authors']['table'] = 'field_data_field_authors';
+  $handler->display->display_options['fields']['field_authors']['field'] = 'field_authors';
+  $handler->display->display_options['fields']['field_authors']['label'] = '';
+  $handler->display->display_options['fields']['field_authors']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_authors']['alter']['preserve_tags'] = '<span>';
+  $handler->display->display_options['fields']['field_authors']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_authors']['type'] = 'field_collection_fields';
+  $handler->display->display_options['fields']['field_authors']['settings'] = array(
+    'view_mode' => 'full',
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  $handler->display->display_options['fields']['field_authors']['delta_offset'] = '0';
+  /* Field: Content: Place of publication */
+  $handler->display->display_options['fields']['field_place_of_publication']['id'] = 'field_place_of_publication';
+  $handler->display->display_options['fields']['field_place_of_publication']['table'] = 'field_data_field_place_of_publication';
+  $handler->display->display_options['fields']['field_place_of_publication']['field'] = 'field_place_of_publication';
+  $handler->display->display_options['fields']['field_place_of_publication']['label'] = '';
+  $handler->display->display_options['fields']['field_place_of_publication']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_place_of_publication']['alter']['text'] = '[field_place_of_publication]:';
+  $handler->display->display_options['fields']['field_place_of_publication']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_place_of_publication']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Content: Publisher */
+  $handler->display->display_options['fields']['field_publisher']['id'] = 'field_publisher';
+  $handler->display->display_options['fields']['field_publisher']['table'] = 'field_data_field_publisher';
+  $handler->display->display_options['fields']['field_publisher']['field'] = 'field_publisher';
+  $handler->display->display_options['fields']['field_publisher']['label'] = '';
+  $handler->display->display_options['fields']['field_publisher']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_publisher']['alter']['text'] = '[field_publisher],';
+  $handler->display->display_options['fields']['field_publisher']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_publisher']['settings'] = array(
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
+  /* Field: Content: Year of Publication */
+  $handler->display->display_options['fields']['field_year_of_publication']['id'] = 'field_year_of_publication';
+  $handler->display->display_options['fields']['field_year_of_publication']['table'] = 'field_data_field_year_of_publication';
+  $handler->display->display_options['fields']['field_year_of_publication']['field'] = 'field_year_of_publication';
+  $handler->display->display_options['fields']['field_year_of_publication']['label'] = '';
+  $handler->display->display_options['fields']['field_year_of_publication']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_year_of_publication']['alter']['text'] = '[field_year_of_publication].';
+  $handler->display->display_options['fields']['field_year_of_publication']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_year_of_publication']['settings'] = array(
+    'format_type' => 'year',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_repeat_rule' => 'show',
+    'conditions' => array(
+      0 => array(
+        'condition' => '',
+      ),
+    ),
+  );
   $handler->display->display_options['entity_type'] = 'node';
   $handler->display->display_options['bundles'] = array(
     0 => 'faculty',
