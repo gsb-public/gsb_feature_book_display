@@ -262,11 +262,6 @@ function gsb_feature_book_display_views_default_views() {
   $handler->display->display_options['relationships']['field_authors_value']['field'] = 'field_authors_value';
   $handler->display->display_options['relationships']['field_authors_value']['delta'] = '-1';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
@@ -296,8 +291,42 @@ function gsb_feature_book_display_views_default_views() {
   $handler->display->display_options['filters']['term_node_tid_depth']['expose']['operator_id'] = 'term_node_tid_depth_op';
   $handler->display->display_options['filters']['term_node_tid_depth']['expose']['label'] = 'Academic Area';
   $handler->display->display_options['filters']['term_node_tid_depth']['expose']['operator'] = 'term_node_tid_depth_op';
-  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['identifier'] = 'term_node_tid_depth';
+  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['identifier'] = 'academic-area';
   $handler->display->display_options['filters']['term_node_tid_depth']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['term_node_tid_depth']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    11 => 0,
+    151 => 0,
+    16 => 0,
+    21 => 0,
+    61 => 0,
+    56 => 0,
+    71 => 0,
+    66 => 0,
+    26 => 0,
+    31 => 0,
+    36 => 0,
+    41 => 0,
+    46 => 0,
+    51 => 0,
+    81 => 0,
+    86 => 0,
+    91 => 0,
+    96 => 0,
+    101 => 0,
+    106 => 0,
+    116 => 0,
+    121 => 0,
+    126 => 0,
+    131 => 0,
+    136 => 0,
+    141 => 0,
+    146 => 0,
+    156 => 0,
+    161 => 0,
+    166 => 0,
+  );
   $handler->display->display_options['filters']['term_node_tid_depth']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['term_node_tid_depth']['type'] = 'select';
   $handler->display->display_options['filters']['term_node_tid_depth']['vocabulary'] = 'academic_area';
@@ -311,8 +340,42 @@ function gsb_feature_book_display_views_default_views() {
   $handler->display->display_options['filters']['term_node_tid_depth_1']['expose']['operator_id'] = 'term_node_tid_depth_1_op';
   $handler->display->display_options['filters']['term_node_tid_depth_1']['expose']['label'] = 'Additional Topics';
   $handler->display->display_options['filters']['term_node_tid_depth_1']['expose']['operator'] = 'term_node_tid_depth_1_op';
-  $handler->display->display_options['filters']['term_node_tid_depth_1']['expose']['identifier'] = 'term_node_tid_depth_1';
+  $handler->display->display_options['filters']['term_node_tid_depth_1']['expose']['identifier'] = 'topics';
   $handler->display->display_options['filters']['term_node_tid_depth_1']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['term_node_tid_depth_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    11 => 0,
+    151 => 0,
+    16 => 0,
+    21 => 0,
+    61 => 0,
+    56 => 0,
+    71 => 0,
+    66 => 0,
+    26 => 0,
+    31 => 0,
+    36 => 0,
+    41 => 0,
+    46 => 0,
+    51 => 0,
+    81 => 0,
+    86 => 0,
+    91 => 0,
+    96 => 0,
+    101 => 0,
+    106 => 0,
+    116 => 0,
+    121 => 0,
+    126 => 0,
+    131 => 0,
+    136 => 0,
+    141 => 0,
+    146 => 0,
+    156 => 0,
+    161 => 0,
+    166 => 0,
+  );
   $handler->display->display_options['filters']['term_node_tid_depth_1']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['term_node_tid_depth_1']['type'] = 'select';
   $handler->display->display_options['filters']['term_node_tid_depth_1']['vocabulary'] = 'business_insight_topic';
@@ -331,6 +394,14 @@ function gsb_feature_book_display_views_default_views() {
   $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_raw_suggestion'] = 1;
   $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_raw_dropdown'] = 1;
   $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_dependent'] = 0;
+  /* Filter criterion: Field collection item: Author (field_person_fac_single_ref) */
+  $handler->display->display_options['filters']['field_person_fac_single_ref_target_id']['id'] = 'field_person_fac_single_ref_target_id';
+  $handler->display->display_options['filters']['field_person_fac_single_ref_target_id']['table'] = 'field_data_field_person_fac_single_ref';
+  $handler->display->display_options['filters']['field_person_fac_single_ref_target_id']['field'] = 'field_person_fac_single_ref_target_id';
+  $handler->display->display_options['filters']['field_person_fac_single_ref_target_id']['relationship'] = 'field_authors_value';
+  $handler->display->display_options['filters']['field_person_fac_single_ref_target_id']['operator'] = 'not empty';
+  $handler->display->display_options['pane_category']['name'] = 'Other';
+  $handler->display->display_options['pane_category']['weight'] = '0';
   $export['gsb_book_listing'] = $view;
 
   return $export;
