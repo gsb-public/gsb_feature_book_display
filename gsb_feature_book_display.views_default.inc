@@ -106,7 +106,7 @@ function gsb_feature_book_display_views_default_views() {
       ),
     ),
   );
-  /* Field: Content: Year of Publication */
+  /* Field: Content: Publication year */
   $handler->display->display_options['fields']['field_year_of_publication']['id'] = 'field_year_of_publication';
   $handler->display->display_options['fields']['field_year_of_publication']['table'] = 'field_data_field_year_of_publication';
   $handler->display->display_options['fields']['field_year_of_publication']['field'] = 'field_year_of_publication';
@@ -125,11 +125,11 @@ function gsb_feature_book_display_views_default_views() {
       ),
     ),
   );
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Sort criterion: Content: Publication year (field_year_of_publication) */
+  $handler->display->display_options['sorts']['field_year_of_publication_value']['id'] = 'field_year_of_publication_value';
+  $handler->display->display_options['sorts']['field_year_of_publication_value']['table'] = 'field_data_field_year_of_publication';
+  $handler->display->display_options['sorts']['field_year_of_publication_value']['field'] = 'field_year_of_publication_value';
+  $handler->display->display_options['sorts']['field_year_of_publication_value']['order'] = 'DESC';
   /* Sort criterion: Content: Title */
   $handler->display->display_options['sorts']['title']['id'] = 'title';
   $handler->display->display_options['sorts']['title']['table'] = 'node';
@@ -232,7 +232,7 @@ function gsb_feature_book_display_views_default_views() {
       ),
     ),
   );
-  /* Field: Content: Year of Publication */
+  /* Field: Content: Publication year */
   $handler->display->display_options['fields']['field_year_of_publication']['id'] = 'field_year_of_publication';
   $handler->display->display_options['fields']['field_year_of_publication']['table'] = 'field_data_field_year_of_publication';
   $handler->display->display_options['fields']['field_year_of_publication']['field'] = 'field_year_of_publication';
