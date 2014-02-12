@@ -351,11 +351,6 @@ function gsb_feature_book_display_views_default_views() {
   $handler->display->display_options['relationships']['field_authors_value']['table'] = 'field_data_field_authors';
   $handler->display->display_options['relationships']['field_authors_value']['field'] = 'field_authors_value';
   $handler->display->display_options['relationships']['field_authors_value']['delta'] = '-1';
-  $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Title */
-  $handler->display->display_options['sorts']['title']['id'] = 'title';
-  $handler->display->display_options['sorts']['title']['table'] = 'node';
-  $handler->display->display_options['sorts']['title']['field'] = 'title';
   $handler->display->display_options['defaults']['arguments'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
