@@ -158,6 +158,15 @@ function gsb_feature_book_display_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'book' => 'book',
   );
+  /* Filter criterion: Field collection item: Profile Visibility (field_profile_visibility) */
+  $handler->display->display_options['filters']['field_profile_visibility_value']['id'] = 'field_profile_visibility_value';
+  $handler->display->display_options['filters']['field_profile_visibility_value']['table'] = 'field_data_field_profile_visibility';
+  $handler->display->display_options['filters']['field_profile_visibility_value']['field'] = 'field_profile_visibility_value';
+  $handler->display->display_options['filters']['field_profile_visibility_value']['relationship'] = 'field_authors_value';
+  $handler->display->display_options['filters']['field_profile_visibility_value']['value'] = array(
+    1 => '1',
+    2 => '2',
+  );
 
   /* Display: EVA Field */
   $handler = $view->new_display('entity_view', 'EVA Field', 'entity_view_1');
