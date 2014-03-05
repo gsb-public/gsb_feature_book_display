@@ -40,12 +40,14 @@ function gsb_feature_book_display_views_default_views() {
   $handler->display->display_options['relationships']['field_authors_value']['id'] = 'field_authors_value';
   $handler->display->display_options['relationships']['field_authors_value']['table'] = 'field_data_field_authors';
   $handler->display->display_options['relationships']['field_authors_value']['field'] = 'field_authors_value';
+  $handler->display->display_options['relationships']['field_authors_value']['label'] = 'Field Authors';
   $handler->display->display_options['relationships']['field_authors_value']['delta'] = '-1';
   /* Relationship: Entity Reference: Referenced Entity */
   $handler->display->display_options['relationships']['field_person_fac_single_ref_target_id']['id'] = 'field_person_fac_single_ref_target_id';
   $handler->display->display_options['relationships']['field_person_fac_single_ref_target_id']['table'] = 'field_data_field_person_fac_single_ref';
   $handler->display->display_options['relationships']['field_person_fac_single_ref_target_id']['field'] = 'field_person_fac_single_ref_target_id';
   $handler->display->display_options['relationships']['field_person_fac_single_ref_target_id']['relationship'] = 'field_authors_value';
+  $handler->display->display_options['relationships']['field_person_fac_single_ref_target_id']['label'] = 'Faculty';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -499,9 +501,12 @@ function gsb_feature_book_display_views_default_views() {
   $handler->display->display_options['pane_category']['weight'] = '0';
 
   /* Display: EVA Field Form */
-  $handler = $view->new_display('entity_view', 'EVA Field Form', 'entity_view_2');
+  $handler = $view->new_display('entity_view', 'EVA Field Form', 'eva_field_form');
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '25';
@@ -549,18 +554,16 @@ function gsb_feature_book_display_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['header'] = FALSE;
+  /* Header: Global: Messages */
+  $handler->display->display_options['header']['messages']['id'] = 'messages';
+  $handler->display->display_options['header']['messages']['table'] = 'views';
+  $handler->display->display_options['header']['messages']['field'] = 'messages';
   /* Header: GSB: Modal node add link */
   $handler->display->display_options['header']['gsb_node_modal_add_link']['id'] = 'gsb_node_modal_add_link';
   $handler->display->display_options['header']['gsb_node_modal_add_link']['table'] = 'gsb__global';
   $handler->display->display_options['header']['gsb_node_modal_add_link']['field'] = 'gsb_node_modal_add_link';
   $handler->display->display_options['header']['gsb_node_modal_add_link']['bundle'] = 'book';
   $handler->display->display_options['header']['gsb_node_modal_add_link']['text'] = 'Create a New Book';
-  $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Authors (field_authors) */
-  $handler->display->display_options['relationships']['field_authors_value']['id'] = 'field_authors_value';
-  $handler->display->display_options['relationships']['field_authors_value']['table'] = 'field_data_field_authors';
-  $handler->display->display_options['relationships']['field_authors_value']['field'] = 'field_authors_value';
-  $handler->display->display_options['relationships']['field_authors_value']['delta'] = '-1';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
@@ -606,7 +609,16 @@ function gsb_feature_book_display_views_default_views() {
   $handler->display->display_options['fields']['edit_node_modal']['field'] = 'edit_node_modal';
   $handler->display->display_options['fields']['edit_node_modal']['label'] = '';
   $handler->display->display_options['fields']['edit_node_modal']['element_label_colon'] = FALSE;
-  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Title */
+  $handler->display->display_options['sorts']['title']['id'] = 'title';
+  $handler->display->display_options['sorts']['title']['table'] = 'node';
+  $handler->display->display_options['sorts']['title']['field'] = 'title';
+  /* Sort criterion: Content: Publication year (field_year_of_publication) */
+  $handler->display->display_options['sorts']['field_year_of_publication_value']['id'] = 'field_year_of_publication_value';
+  $handler->display->display_options['sorts']['field_year_of_publication_value']['table'] = 'field_data_field_year_of_publication';
+  $handler->display->display_options['sorts']['field_year_of_publication_value']['field'] = 'field_year_of_publication_value';
+  $handler->display->display_options['sorts']['field_year_of_publication_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -624,52 +636,14 @@ function gsb_feature_book_display_views_default_views() {
     'book' => 'book',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Field collection item: Profile Visibility (field_profile_visibility) */
-  $handler->display->display_options['filters']['field_profile_visibility_value']['id'] = 'field_profile_visibility_value';
-  $handler->display->display_options['filters']['field_profile_visibility_value']['table'] = 'field_data_field_profile_visibility';
-  $handler->display->display_options['filters']['field_profile_visibility_value']['field'] = 'field_profile_visibility_value';
-  $handler->display->display_options['filters']['field_profile_visibility_value']['relationship'] = 'field_authors_value';
-  $handler->display->display_options['filters']['field_profile_visibility_value']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['field_profile_visibility_value']['expose']['operator_id'] = 'field_profile_visibility_value_op';
-  $handler->display->display_options['filters']['field_profile_visibility_value']['expose']['label'] = 'Profile Visibility';
-  $handler->display->display_options['filters']['field_profile_visibility_value']['expose']['operator'] = 'field_profile_visibility_value_op';
-  $handler->display->display_options['filters']['field_profile_visibility_value']['expose']['identifier'] = 'field_profile_visibility_value';
-  $handler->display->display_options['filters']['field_profile_visibility_value']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => 0,
-    11 => 0,
-    151 => 0,
-    16 => 0,
-    21 => 0,
-    71 => 0,
-    61 => 0,
-    167 => 0,
-    56 => 0,
-    66 => 0,
-    31 => 0,
-    36 => 0,
-    41 => 0,
-    91 => 0,
-    146 => 0,
-    136 => 0,
-    26 => 0,
-    46 => 0,
-    51 => 0,
-    81 => 0,
-    86 => 0,
-    96 => 0,
-    101 => 0,
-    106 => 0,
-    116 => 0,
-    121 => 0,
-    126 => 0,
-    131 => 0,
-    141 => 0,
-    156 => 0,
-    161 => 0,
-    166 => 0,
-  );
   $handler->display->display_options['entity_type'] = 'node';
+  $handler->display->display_options['bundles'] = array(
+    0 => 'faculty',
+  );
+  $handler->display->display_options['show_on'] = array(
+    'display' => FALSE,
+    'form' => 'form',
+  );
   $export['gsb_book_listing'] = $view;
 
   return $export;
