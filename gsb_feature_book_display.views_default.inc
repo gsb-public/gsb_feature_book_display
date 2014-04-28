@@ -214,7 +214,6 @@ function gsb_feature_book_display_views_default_views() {
   $handler->display->display_options['fields']['field_authors']['field'] = 'field_authors';
   $handler->display->display_options['fields']['field_authors']['label'] = '';
   $handler->display->display_options['fields']['field_authors']['alter']['strip_tags'] = TRUE;
-  $handler->display->display_options['fields']['field_authors']['alter']['preserve_tags'] = '<span>';
   $handler->display->display_options['fields']['field_authors']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_authors']['type'] = 'field_collection_fields';
   $handler->display->display_options['fields']['field_authors']['settings'] = array(
