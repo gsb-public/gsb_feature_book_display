@@ -541,6 +541,7 @@ function gsb_feature_book_display_views_default_views() {
   $handler->display->display_options['filters']['field_person_fac_single_ref_target_id']['field'] = 'field_person_fac_single_ref_target_id';
   $handler->display->display_options['filters']['field_person_fac_single_ref_target_id']['relationship'] = 'field_authors_value';
   $handler->display->display_options['filters']['field_person_fac_single_ref_target_id']['operator'] = 'not empty';
+  $handler->display->display_options['pane_title'] = 'Books';
   $handler->display->display_options['pane_category']['name'] = 'Other';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
@@ -777,7 +778,7 @@ function gsb_feature_book_display_views_default_views() {
   $handler->display->display_options['filters']['field_alumni_story_value']['value'] = array(
     1 => '1',
   );
-  /* Filter criterion: Field: Program (field_program_single) */
+  /* Filter criterion: Fieldable panel pane: Program (field_program_single) */
   $handler->display->display_options['filters']['field_program_single_tid']['id'] = 'field_program_single_tid';
   $handler->display->display_options['filters']['field_program_single_tid']['table'] = 'field_data_field_program_single';
   $handler->display->display_options['filters']['field_program_single_tid']['field'] = 'field_program_single_tid';
