@@ -778,19 +778,6 @@ function gsb_feature_book_display_views_default_views() {
   $handler->display->display_options['filters']['field_alumni_story_value']['value'] = array(
     1 => '1',
   );
-  /* Filter criterion: Fieldable panel pane: Program (field_program_single) */
-  $handler->display->display_options['filters']['field_program_single_tid']['id'] = 'field_program_single_tid';
-  $handler->display->display_options['filters']['field_program_single_tid']['table'] = 'field_data_field_program_single';
-  $handler->display->display_options['filters']['field_program_single_tid']['field'] = 'field_program_single_tid';
-  $handler->display->display_options['filters']['field_program_single_tid']['value'] = array(
-    10881 => '10881',
-    10887 => '10887',
-    10886 => '10886',
-    10891 => '10891',
-    27331 => '27331',
-  );
-  $handler->display->display_options['filters']['field_program_single_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_program_single_tid']['vocabulary'] = 'program';
   /* Filter criterion: Content: Search field (field_search_field) */
   $handler->display->display_options['filters']['field_search_field_value']['id'] = 'field_search_field_value';
   $handler->display->display_options['filters']['field_search_field_value']['table'] = 'field_data_field_search_field';
