@@ -1,7 +1,7 @@
 name = GSB Feature Book Display
 core = 7.x
 package = GSB
-version = 7.x-3.3
+version = release-5.0-dev
 project = gsb_feature_book_display
 dependencies[] = better_exposed_filters
 dependencies[] = ctools
@@ -10,7 +10,7 @@ dependencies[] = eva
 dependencies[] = views
 dependencies[] = views_content
 dependencies[] = views_load_more
-datestamp = 1390801811
+datestamp = 1416074635
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
 features[views_view][] = gsb_book_listing
