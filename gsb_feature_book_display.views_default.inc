@@ -844,6 +844,7 @@ function gsb_feature_book_display_views_default_views() {
   );
   $handler->display->display_options['filters']['field_program_unlimited_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_program_unlimited_tid']['vocabulary'] = 'program';
+  $handler->display->display_options['pane_title'] = 'Book (Alumni)';
   $handler->display->display_options['pane_category']['name'] = 'Other';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $export['gsb_book_listing'] = $view;
