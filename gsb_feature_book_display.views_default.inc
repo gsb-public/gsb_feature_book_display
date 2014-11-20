@@ -727,6 +727,32 @@ function gsb_feature_book_display_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['defaults']['use_ajax'] = FALSE;
   $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['defaults']['exposed_form'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+    ),
+    'field_search_field_value' => array(
+      'bef_format' => 'default',
+      'more_options' => array(
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
+  );
+  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
+  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'gsb_wysiwyg_text';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'load_more';
   $handler->display->display_options['pager']['options']['items_per_page'] = '20';
@@ -802,7 +828,7 @@ function gsb_feature_book_display_views_default_views() {
   $handler->display->display_options['filters']['field_search_field_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_search_field_value']['expose']['operator_id'] = 'field_search_field_value_op';
   $handler->display->display_options['filters']['field_search_field_value']['expose']['operator'] = 'field_search_field_value_op';
-  $handler->display->display_options['filters']['field_search_field_value']['expose']['identifier'] = 'book_search';
+  $handler->display->display_options['filters']['field_search_field_value']['expose']['identifier'] = 'search';
   $handler->display->display_options['filters']['field_search_field_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
@@ -841,6 +867,7 @@ function gsb_feature_book_display_views_default_views() {
     181 => 0,
     186 => 0,
     191 => 0,
+    196 => 0,
   );
   $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_items'] = '10';
   $handler->display->display_options['filters']['field_search_field_value']['expose']['autocomplete_min_chars'] = '0';
