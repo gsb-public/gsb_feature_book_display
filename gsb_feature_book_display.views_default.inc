@@ -542,7 +542,7 @@ function gsb_feature_book_display_views_default_views() {
   $handler->display->display_options['filters']['field_person_fac_single_ref_target_id']['relationship'] = 'field_authors_value';
   $handler->display->display_options['filters']['field_person_fac_single_ref_target_id']['operator'] = 'not empty';
   $handler->display->display_options['pane_title'] = 'Books';
-  $handler->display->display_options['pane_category']['name'] = 'Other';
+  $handler->display->display_options['pane_category']['name'] = 'Non-customizable Content Lists';
   $handler->display->display_options['pane_category']['weight'] = '0';
 
   /* Display: EVA Field Form */
@@ -888,7 +888,7 @@ function gsb_feature_book_display_views_default_views() {
   $handler->display->display_options['filters']['field_program_unlimited_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_program_unlimited_tid']['vocabulary'] = 'program';
   $handler->display->display_options['pane_title'] = 'Book (Alumni)';
-  $handler->display->display_options['pane_category']['name'] = 'Other';
+  $handler->display->display_options['pane_category']['name'] = 'Non-customizable Content Lists';
   $handler->display->display_options['pane_category']['weight'] = '0';
   $export['gsb_book_listing'] = $view;
 
