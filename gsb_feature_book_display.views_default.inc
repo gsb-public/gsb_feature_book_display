@@ -755,6 +755,24 @@ function gsb_feature_book_display_views_default_views() {
         ),
       ),
     ),
+    'field_centers_research_programs_tid' => array(
+      'bef_format' => 'bef',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 0,
+        'is_secondary' => 1,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+          ),
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+        ),
+      ),
+    ),
   );
   $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
   $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'gsb_wysiwyg_text';
@@ -921,7 +939,7 @@ function gsb_feature_book_display_views_default_views() {
   $handler->display->display_options['filters']['field_centers_research_programs_tid']['field'] = 'field_centers_research_programs_tid';
   $handler->display->display_options['filters']['field_centers_research_programs_tid']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_centers_research_programs_tid']['expose']['operator_id'] = 'field_centers_research_programs_tid_op';
-  $handler->display->display_options['filters']['field_centers_research_programs_tid']['expose']['label'] = 'CIRCLE';
+  $handler->display->display_options['filters']['field_centers_research_programs_tid']['expose']['label'] = 'Centers, Initiatives, and Institutes';
   $handler->display->display_options['filters']['field_centers_research_programs_tid']['expose']['operator'] = 'field_centers_research_programs_tid_op';
   $handler->display->display_options['filters']['field_centers_research_programs_tid']['expose']['identifier'] = 'field_centers_research_programs_tid';
   $handler->display->display_options['filters']['field_centers_research_programs_tid']['expose']['multiple'] = TRUE;
@@ -975,8 +993,10 @@ function gsb_feature_book_display_views_default_views() {
     211 => 0,
     251 => 0,
   );
+  $handler->display->display_options['filters']['field_centers_research_programs_tid']['reduce_duplicates'] = TRUE;
   $handler->display->display_options['filters']['field_centers_research_programs_tid']['type'] = 'select';
   $handler->display->display_options['filters']['field_centers_research_programs_tid']['vocabulary'] = 'centers_research_programs';
+  $handler->display->display_options['filters']['field_centers_research_programs_tid']['error_message'] = FALSE;
   $handler->display->display_options['pane_title'] = 'Books';
   $handler->display->display_options['pane_category']['name'] = 'Non-customizable Content Lists';
   $handler->display->display_options['pane_category']['weight'] = '0';
