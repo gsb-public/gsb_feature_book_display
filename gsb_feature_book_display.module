@@ -34,7 +34,6 @@ function gsb_feature_book_display_form_views_content_views_panes_content_type_ed
         unset($form['view_mode']['#options'][$key]);
       }
     }
-
    // $form['exposed']['widget_title']['#field_prefix'] = 'Block Title';
     $form['arguments']['nid']['#description'] = 'Separate Node IDs with commas and no spaces.';
     $form['exposed']['filter-field_person_fac_single_ref_target_id']['#description'] = 'Enter faculty node ID.';
