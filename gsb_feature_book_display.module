@@ -82,7 +82,7 @@ function gsb_feature_book_display_form_submit($form, &$form_state) {
 function gsb_feature_book_display_panels_pane_content_alter($content, $pane, $args, $context) {
   if ($content && $content->subtype == 'book_filters-book_filters_pane') {
     if (!empty($pane->configuration['title_link'])) {
-      $content->title = l($content->title, $pane->configuration['title_link']);
+      $content->title = decode_entities(l($content->title, $pane->configuration['title_link']));
     }
   }
 }
