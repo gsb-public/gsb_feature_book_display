@@ -89,3 +89,20 @@ function gsb_feature_book_display_panels_pane_content_alter($content, $pane, $ar
     }
   }
 }
+
+/**
+ * Implements hook_form_FORM_ID_alter() for views_exposed_form.
+ */
+function gsb_feature_book_display_form_views_exposed_form_alter(&$form, &$form_state, $form_id) {
+  if ($form_state['view']->name == 'gsb_book_listing' && $form_state['view']->current_display == 'book_listing') {
+    $form['#action'] = '';
+    $form['secondary']['done'] = array(
+      '#type' => 'submit',
+      '#value' => t('Done'),
+    );
+    $form['secondary']['clear-all'] = array(
+      '#type' => 'button',
+      '#value' => t('Clear All'),
+    );
+  }
+}
