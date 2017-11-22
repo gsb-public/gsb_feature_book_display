@@ -67,7 +67,6 @@ function gsb_feature_book_display_form_views_content_views_panes_content_type_ed
       '#weight' => 2,
       '#default_value' => !empty($conf['cta_url']) ? $conf['cta_url'] : '',
     );
-    $form = gsb_misc_fixes_associative_insert($form, 'override_title_text', $item);
     $form['items_per_page']['#weight'] = -99;
     $form['view_mode']['#weight'] = -99;
     $form['exposed']['#weight'] = 100;
